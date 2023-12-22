@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Codo A Codo - Comprar tickets</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+          <div class="container">
+            <a class="navbar-brand" href="index.html#conferencia"><img src="assets/img/codoacodo.png" alt="Logo" width="80">Conf Bs As</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#conferencia">La conferencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#oradores">Los oradores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#lugar">El lugar y la fecha</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#formulario">Convierte en orador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success active" href="#" aria-current="page">Comprar tickets</a>
+                    </li>
+                </ul>
+            </div>
+      </div>
+    </nav>
+    <main>
+        <section id="comprarTickets">
+            <div class="container py-4 min-vh-100">
+                <div class="w-75 m-auto">
+                    <div class="row g-2 text-center row-cols-1 row-cols-md-3">
+                      <div class="col">
+                        <div class="border border-primary py-4">
+                          <h3>Estudiante</h3>
+                          <p>Tienen un descuento</p>
+                          <h4>80%</h4>
+                          <small class="text-secondary">*presentar documentación</small>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="border border-success py-4">
+                          <h3>Trainee</h3>
+                          <p>Tienen un descuento</p>
+                          <h4>50%</h4>
+                          <small class="text-secondary">*presentar documentación</small>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="border border-warning py-4">
+                          <h3>Junior</h3>
+                          <p>Tienen un descuento</p>
+                          <h4>15%</h4>
+                          <small class="text-secondary">*presentar documentación</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-uppercase mt-2 text-center">
+                        <p class="m-0">Venta</p>
+                        <h2>Valor de ticket $200</h2>
+                    </div>
+                    <form action="carrito/comprar.jsp" method="post" id="formularioDeCompra">
+                        <div class="row g-2">
+                          <div class="col-md">
+                            <div class="mb-3">
+                              <input type="text" name="nombre" class="form-control" id="inputNombre" placeholder="Nombre">
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="mb-3">
+                              <input type="text" name="apellido" class="form-control" id="inputApellido" placeholder="Apellido">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Correo">
+                        </div>
+                        <div class="row g-2">
+                          <div class="col-md">
+                            <div class="mb-3">
+                              <input type="number" name="cantidad" class="form-control" id="inputCantidad" min="0" placeholder="Cantidad">
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="mb-3">
+                              <select class="form-select" name="categoria" id="inputCategoria" aria-label="Elegí tu categoria">
+                                <option value="" selected>Elegí tu categoria</option>
+                                <option value="Estudiante">Estudiante</option>
+                                <option value="Trainee">Trainee</option>
+                                <option value="Junior">Junior</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="alert alert-primary" role="alert">
+                        	<input type="hidden" value="0" id="precio" name="precio">
+                          Total a pagar: $<span id="precioTotal">0</span>
+                        </div>
+                        <div class="row">
+                          <div class="mb-2 d-grid">
+                            <button class="btn btn-success" id="btnComprar">
+                              Comprar
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row g-2">
+                          <div class="col-md">
+                            <div class="mb-3 d-grid">
+                              <button class="btn btn-green" id="btnReset" type="reset">
+                                Borrar
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="mb-3 d-grid">
+                              <button class="btn btn-green" id="btnResumen" type="button">
+                                Resumen
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container py-4">
+            <div class="row row-cols-1 row-cols-md-auto justify-content-center align-items-center text-center g-4">
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Preguntas<br>frecuentes</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Contáctanos</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Prensa</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Conferencias</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Términos y<br>condiciones</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Privacidad</a>
+                </div>
+                <div class="col">
+                    <a href="#" class="text-white text-decoration-none">Estudiantes</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/comprartickets.js"></script>
+</body>
+</html>

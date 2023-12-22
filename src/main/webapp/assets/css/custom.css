@@ -1,0 +1,17 @@
+.btn-green {
+    --bs-btn-bg: #96c93e;
+    --bs-btn-hover-bg: #96c93e;
+    --bs-btn-active-bg: #577e15;
+    --bs-btn-active-color: white;
+    --bs-btn-hover-color: white;
+    --bs-btn-color: white;
+}
+  
+#btnComprar {
+    display: none;
+}
+
+footer {
+    background-color: #1d3e51;
+    color: white;
+}
